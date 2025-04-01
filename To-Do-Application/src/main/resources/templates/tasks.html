@@ -10,9 +10,20 @@
         To Do Application
     </h1>
     <div>
+        <form action="/" method="post">
+            <div>
+                <input type="text" name="title" placeholder="Ädd new task" required>
+            </div>
+            <div>
+                <button type="submit">Add</button>
+            </div>
+        </form>
         <th:block th:each="task : ${tasks}">
             <div>
-                <span th:text="$task.title}">Tak Title</span>
+                <span th:text="${task.title}">task title</span>
+                <span th:text="${task.completed}">task Completed</span>
+
+
             </div>
         </th:block>
     </div>
