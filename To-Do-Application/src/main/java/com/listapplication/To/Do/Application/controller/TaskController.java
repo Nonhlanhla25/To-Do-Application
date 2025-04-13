@@ -18,7 +18,7 @@ public class TaskController {
     }
 
     //handler method to handle tasks
-    @GetMapping("/")
+    @GetMapping("/tasks")
     public String getTasks(Model model){
         List<Task> tasks = taskService.getAllTasks();
         model.addAttribute("tasks",tasks);
