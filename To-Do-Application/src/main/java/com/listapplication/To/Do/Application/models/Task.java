@@ -1,10 +1,9 @@
 package com.listapplication.To.Do.Application.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -13,7 +12,16 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
+    private LocalDateTime time;
     private boolean completed;
+
+    public LocalDateTime getTime() {
+        return time;
+    }
+
+    public void setTime(LocalDateTime time) {
+        this.time = time;
+    }
 
     public Long getId() {
         return id;

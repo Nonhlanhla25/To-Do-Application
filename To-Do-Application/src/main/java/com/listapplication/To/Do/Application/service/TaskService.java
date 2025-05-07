@@ -4,6 +4,7 @@ import com.listapplication.To.Do.Application.models.Task;
 import com.listapplication.To.Do.Application.repository.TaskRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -23,9 +24,11 @@ public class TaskService {
     public void createTask(String title){
         Task task = new Task();
         task.setTitle(title);
+        task.setTime(LocalDateTime.now());
         task.setCompleted(false);
         taskRepository.save(task);
     }
+
 
     public void deleteTask(Long id) {
         taskRepository.deleteById(id);
